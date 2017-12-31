@@ -1,6 +1,6 @@
 Project setup:
 
-Please go perform below command for the configuration.
+Please perform below command for the configuration.
 
 `cd react-shopping-cart`
 
