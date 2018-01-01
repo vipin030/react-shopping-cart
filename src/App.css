@@ -103,17 +103,25 @@
   border:1px solid #eee;
   z-index:1000;
 }
+
 .cart-items{
   padding:10px;
 }
+
 .cart-container{
   height:275px;
   overflow-y:auto;
 }
+
 .cart-total{
   font-weight:bold;
   border-top:solid;
   padding-top: 5px;
+}
+
+.cart-item-remove{
+  cursor:pointer;
+  font-size: 15px;
 }
 
 .close-icon{

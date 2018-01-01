@@ -16,10 +16,8 @@ export const getCartDetails = (state) =>{
 }
 
 export const getCartPrice = (state) => {
-	console.log("Total fun")
 	return getCartDetails(state).reduce((total, item)=>{
 		total += (parseFloat(item.price)*parseFloat(item.inventory));
-		console.log("Total",total)
 		return total;
 	},0).toFixed(2);
 }

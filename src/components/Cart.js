@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Cart = ({props, total, isDialogOpen, close}) => {
+const Cart = ({props, total, isDialogOpen, close, removeFromCart}) => {
+	//const 
 	const data = props.length > 0 ? (	
-		<div className="cart">
-		<div onClick={close} className="close-icon"></div>
+		<div>
 		<div className="cart-container">
 		{props.map((data)=>(
 		
-		<div className="cart-items" key={data.id}>{data.title}&nbsp;&nbsp;  {data.price}&nbsp;&nbsp; {data.inventory}&nbsp;Item</div>
+		<div className="cart-items" key={data.id}>{data.title}&nbsp;&nbsp;  {data.price}&nbsp;&nbsp; {data.inventory}&nbsp;Item
+		&nbsp;&nbsp;<span className="cart-item-remove" onClick={()=>removeFromCart({'productId':data.id,'inventory':data.inventory})}>X</span></div>
 		))
 		}
 		</div>
@@ -16,7 +17,8 @@ const Cart = ({props, total, isDialogOpen, close}) => {
 	
 		return (
 		<div>
-		{isDialogOpen && (<div>{data}</div>)}
+		{isDialogOpen && (<div className="cart">
+		<div onClick={close} className="close-icon"></div>{data}</div>)}
 		</div>
 		)
 }

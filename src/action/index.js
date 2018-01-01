@@ -32,6 +32,14 @@ export const addToCart = productId => (dispatch, getState) => {
 		dispatch(addToCartUnSafe(productId))
 }
 
+export const removeFromCart = (product) => { 
+	return {
+		type: 'REMOVE_FROM_CART',
+		productId: product.productId,
+		inventory: product.inventory
+	}
+}
+
 export const closeCart = () => {
 	return {
 		type: 'CLOSE_DIALOG',

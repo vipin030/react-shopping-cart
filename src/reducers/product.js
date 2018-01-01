@@ -2,10 +2,15 @@ import { combineReducers } from 'redux';
 
 export const product = (state={},action) => {
 	switch(action.type){
-		case 'ADD_TO_CART':console.log("Added to cart sucessfully");
+		case 'ADD_TO_CART':
 			return {
 				...state,
 				inventory: state.inventory-1
+			};
+		case 'REMOVE_FROM_CART':
+			return {
+				...state,
+				inventory: state.inventory += action.inventory
 			};
 		default:
 			return state;
@@ -14,7 +19,7 @@ export const product = (state={},action) => {
 
 export const byId = (state = {}, action) => {
 	switch(action.type) {
-		case 'RECEIVE_PRODUCTS':console.log("Reducer product starting");
+		case 'RECEIVE_PRODUCTS':
 			return {
 				...state,
 				...action.products.reduce((obj, product) =>{
@@ -22,7 +27,7 @@ export const byId = (state = {}, action) => {
 					return obj
 				},{})
 			}
-		default: console.log("Default action")
+		default:
 			const { productId } = action;
 			if(productId){
 				return {

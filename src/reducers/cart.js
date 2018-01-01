@@ -10,6 +10,9 @@ const addedIds = (state = initialState.addedIds, action) =>{
 			if(state.indexOf(action.productId) !== -1)
 				return state;
 			return [...state, action.productId];
+		case 'REMOVE_FROM_CART':
+			let index = state.findIndex(id => id == action.productId);
+			return [...state.slice(0,index),...state.slice(index+1)];
 		default:
 			return state;
 	}
@@ -20,6 +23,11 @@ const productQuantities = (state = initialState.productQuantities, action) =>{
 		case 'ADD_TO_CART':
 			const { productId } = action;
 			return {...state,[productId]:(state[productId] || 0)+1}
+		case 'REMOVE_FROM_CART':
+			let index = action.productId;
+			let res = Object.assign({}, state)
+  			delete res[index]
+  			return res
 		default:
 			return state;
 	}
