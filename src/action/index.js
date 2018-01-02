@@ -13,7 +13,6 @@ export const fetchAllProducts = () => dispatch =>{
 }
 
 export const selectProduct = product => {
-	console.log("tset");
 	return {
 		type: 'GET_PRODUCT_BY_ID',
 		payload:product
@@ -48,9 +47,15 @@ export const closeCart = () => {
 }
 
 export const openCart = () => {
-	console.log("testing....")
 	return {
 		type: 'OPEN_DIALOG',
 		payload:true
 	}
+}
+
+export const checkout = (products) => (dispatch)=> {
+	dispatch({type: 'CHECKOUT_REQUEST'});
+	api.buyProduct(products, () => {
+			console.log("Success");
+	})
 }

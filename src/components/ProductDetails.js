@@ -10,7 +10,7 @@ const ProductDetails = ({props, addToCart}) => (
 	<br/>
 	Price: {props.price}
 	<br/><br/><br/>
-	<button onClick={addToCart} disabled={props.inventory>0 ? false : true}>Add to Cart</button>
+	<button className="btn btn-default" onClick={addToCart} disabled={props.inventory>0 ? '' : 'disabled'}>Add to Cart</button>
 	</div>
 	</div>
 )

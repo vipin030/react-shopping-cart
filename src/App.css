@@ -92,9 +92,9 @@
 /**End here ***/
 
 .cart{
-  width:300px;
+  width:320px;
   padding:5px;
-  height: 312px;
+  height: 322px;
   background:#270000;
   color:#fff;
   position:fixed;
@@ -113,15 +113,29 @@
   overflow-y:auto;
 }
 
-.cart-total{
+.cart-footer{
   font-weight:bold;
   border-top:solid;
   padding-top: 5px;
 }
 
+.cart-total{
+  float:left;
+  margin-top:5px;
+}
+
+.cart-checkout{
+  float:right;
+  margin-left:10px;
+}
+
 .cart-item-remove{
   cursor:pointer;
   font-size: 15px;
+}
+
+.checkout-btn{
+  padding: 2px 5px;
 }
 
 .close-icon{

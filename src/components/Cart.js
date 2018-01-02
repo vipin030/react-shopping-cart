@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cart = ({props, total, isDialogOpen, close, removeFromCart}) => {
+const Cart = ({props, total, isDialogOpen, close, removeFromCart, onCheckout}) => {
 	//const 
 	const data = props.length > 0 ? (	
 		<div>
@@ -12,7 +12,13 @@ const Cart = ({props, total, isDialogOpen, close, removeFromCart}) => {
 		))
 		}
 		</div>
-		<div className="cart-total">Total: &nbsp; {total}{isDialogOpen}</div>
+		<div className="cart-footer">
+		<div className="cart-total"> 
+		Total: &nbsp; {total}{isDialogOpen}
+		</div>
+		<div className="cart-checkout">
+		&nbsp;&nbsp;<button className="btn btn-default checkout-btn" onClick={onCheckout}>Checkout</button></div>
+		</div>
 		</div>): (<div>Your cart is empty</div>)
 	
 		return (
